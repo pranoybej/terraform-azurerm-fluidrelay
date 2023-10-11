@@ -29,11 +29,11 @@ provider "azurerm" {
 }
 
 # Provision an Azure Fluid Relay Server
-module "frs01" {
-  source                = "./Fluid Relay"
+module "fluid01" {
+  source                = "../"
   create_resource_group = true
-  resource_group_name   = "example-fluid-rg"
-  location              = "centralindia"
+  resource_group_name   = var.rg_name
+  location              = var.location
   name                  = "myflr01"
   tags = {
     Application = "Fluid Relay"
